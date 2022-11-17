@@ -1,0 +1,6 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+# TLT Spec file for evaluation of Question Answering model trained on SQuAD like dataset.
+
+# Test settings: dataset.
+test_ds:
+  file: ??? # e.g. squad/v1.1/dev-v1.1.json 

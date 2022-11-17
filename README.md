@@ -38,7 +38,7 @@ When you are done with `Data preprocessing Lab` and `2.Transfer learning with TA
 
 ### Run Riva Speech Server
 
-To activate the Triton Server container, run:
+To activate the Riva Server container, run:
 ```
 singularity run \
   --nv \

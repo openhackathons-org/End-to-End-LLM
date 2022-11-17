@@ -1,0 +1,6 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+# TLT spec file for inference on individual files from a pretrained ASR checkpoint.
+
+input_path: ???
+output_path: ???
+sample_rate: 22050

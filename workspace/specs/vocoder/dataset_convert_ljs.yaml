@@ -1,0 +1,9 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+# TAO Toolkit spec file for conversion of the LJSpeech dataset to a format
+# accepted by the TAO Toolkit.
+
+# The dataset type
+dataset_name: "ljs"
+
+# Path to the dataset
+data_dir: ???

@@ -1,0 +1,10 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+
+# Name of the .tlt EFF archive to be loaded/model to be exported.
+restore_from: trained-model.tlt
+
+# Set export format: ONNX | RIVA
+export_format: RIVA
+
+# Output EFF archive containing ONNX.
+export_to: exported-model.riva

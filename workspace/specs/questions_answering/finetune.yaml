@@ -1,0 +1,18 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+# TLT Spec file for finetuning of the previously pretrained Question Answering model on the SQuAD dataset.
+
+trainer:
+  max_epochs: 100
+
+# Fine-tuning settings: training dataset.
+finetuning_ds:
+  file: ??? # e.g. squad/v1.1/train-v1.1.json
+
+# Fine-tuning settings: validation dataset.
+validation_ds:
+  file: ??? # e.g. squad/v1.1/dev-v1.1.json
+
+# Fine-tuning optimizer settings.
+optim:
+  name: adamw
+  lr: 5e-6

@@ -1,0 +1,15 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+
+# IO parameters.
+output_path: ???
+manifest_filepath: ???
+num_files: 10
+
+# pitch statistic parameters
+pitch_fmin: 64
+pitch_fmax: 512
+n_window_size: 1024
+sample_rate: 22050
+
+compute_stats: false
+render_plots: false

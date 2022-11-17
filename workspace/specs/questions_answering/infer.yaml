@@ -1,0 +1,6 @@
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+# TLT Spec file for inference using the previously pretrained and exported Question Answering model.
+
+# Name of  file containing data used as inputs during the inference.
+infer_ds:
+    file: ???
