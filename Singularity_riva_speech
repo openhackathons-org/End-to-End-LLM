@@ -1,0 +1,27 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/riva/riva-speech:2.6.0
+
+
+%runscript
+ 
+    "$@"
+
+%post
+
+    apt-get update -y
+        
+    # Install jupyterlab and packages
+    pip3 install jupyterlab \
+    ipywidgets 
+    
+
+%files
+
+    #workspace/* /workspace/
+
+%environment
+XDG_RUNTIME_DIR=
+
+%labels
+
+AUTHOR Tosin
