@@ -32,7 +32,7 @@ Emphasis, including quotes made for emphasis and introduction of new terms shoul
 
 ## Contributing Labs/Modules
 
-#### .nemo model deployment with RIVA 
+#### .nemo Model Deployment with RIVA 
 * In the RIVA section of the repo, only .tlt or .etlt models can be deployed. Add a section to the RIVA notebook on how to deploy .nemo models on RIVA
 
 #### Nemo Megatron
