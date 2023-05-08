@@ -41,7 +41,7 @@ gpus_to_use="device=0"
 
 # Specify the encryption key to use to deploy models
 #MODEL_DEPLOY_KEY="tlt_encode"
-MODEL_DEPLOY_KEY="aWNydmQ5bGRjNmppcDdoOTUwMGxuMHYzaWQ6MzFkYWI4ZTItYTEwZi00YTY4LWE5NTctYzJkNjQwMjUwMDdk"
+MODEL_DEPLOY_KEY=""
 
 # Locations to use for storing models artifacts
 #
@@ -65,7 +65,7 @@ MODEL_DEPLOY_KEY="aWNydmQ5bGRjNmppcDdoOTUwMGxuMHYzaWQ6MzFkYWI4ZTItYTEwZi00YTY4LW
 # are inspected and optimized for deployment. The optimized versions are
 # stored in $riva_model_loc/models. The riva server exclusively uses these
 # optimized versions.
-riva_model_loc="/home/tosin/Documents/End-to-End-NLP/workspace/results/challenge/export_riva"
+riva_model_loc="~/End-to-End-NLP/workspace/results/challenge/export_riva"
 #riva_model_loc="riva-model-repo"
 
 if [[ $riva_target_gpu_family == "tegra" ]]; then

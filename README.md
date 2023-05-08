@@ -17,36 +17,8 @@ The total bootcamp material would take approximately 8 hours. It is recommended 
 
 ## Running using Singularity
 
-To run the material using Singularity containers, follow the steps below.
+Update coming soon
 
-To build the TAO Toolkit Singularity container, run: `singularity build --fakeroot --sandbox tao_e2enlp.simg Singularity_tao`
-
-To build the RIVA client Singularity container for the Client, run: 
-
-
-To download the Riva Speech Server Singularity container for the Server run: `singularity pull riva-speech:2.6.0.sif docker://nvidia/nvcr.io/nvidia/riva/riva-speech:2.6.0`
-
-### Run data preprocessing and TAO notebooks
-
-Run the first container with: `singularity run --fakeroot --nv -B workspace:/workspace tao_e2enlp.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
-
-The `-B` flag mounts local directories in the container filesystem and ensures changes are stored locally in the project folder. Open jupyter lab in browser: http://localhost:8888 
-
-You may now start working on the lab by clicking on the `Start_here.ipynb` notebook.
-
-When you are done with `Data preprocessing Lab` and `2.Transfer learning with TAO Lab`, shut down jupyter lab by selecting `File > Shut Down` in the top left corner, then shut down the Singularity container by typing `exit` or pressing `ctrl + d` in the terminal window.
-
-### Run Riva Speech Server
-
-To activate the Riva Server container, run:
-```
-singularity run \
-  --nv \
-  
-```
- 
-
-### Run Riva 
 
 
 
@@ -165,9 +137,9 @@ tasks:
 
 ### Run All Notebooks
 
-Activate virtualvenwrapper launcher `workon launcher` (you may be required to export path as executed in 4. above)
+Activate virtualvenwrapper launcher `workon launcher` (you may be required to export path as executed in 4. above) 
     
-You are to run the first ALL notebooks in the `launcher` environment.
+You are to run the ALL notebooks in the `launcher` environment.
 
 Launch the jupyter lab with:
 
