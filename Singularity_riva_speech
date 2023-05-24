@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvcr.io/nvidia/riva/riva-speech:2.6.0
+From: nvcr.io/nvidia/riva/riva-speech:2.11.0-servicemaker
 
 
 %runscript
