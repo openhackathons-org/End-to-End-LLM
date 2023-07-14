@@ -37,11 +37,11 @@ asr_acoustic_model=("conformer")
 
 # Specify one or more GPUs to use
 # specifying more than one GPU is currently an experimental feature, and may result in undefined behaviours.
+#gpus_to_use="device=0" 
 gpus_to_use="device=0"
-
 # Specify the encryption key to use to deploy models
 #MODEL_DEPLOY_KEY="tlt_encode"
-MODEL_DEPLOY_KEY=""
+MODEL_DEPLOY_KEY="aWNydmQ5bGRjNmppcDdoOTUwMGxuMHYzaWQ6ZTc1Y2UxNWMtYTkxMi00MWQ2LWFkMjAtMWE3MzQ4YTFlMWUw"
 
 # Locations to use for storing models artifacts
 #
@@ -65,7 +65,10 @@ MODEL_DEPLOY_KEY=""
 # are inspected and optimized for deployment. The optimized versions are
 # stored in $riva_model_loc/models. The riva server exclusively uses these
 # optimized versions.
-riva_model_loc="~/End-to-End-NLP/workspace/results/questions_answering/export_riva"
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+_DIR=$( echo $DIR | cut -f 1,2,3,4,5 -d "/")"/results/questions_answering/export_riva"
+
+riva_model_loc=$( echo $_DIR)
 #riva_model_loc="riva-model-repo"
 
 if [[ $riva_target_gpu_family == "tegra" ]]; then

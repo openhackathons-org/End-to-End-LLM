@@ -18,4 +18,8 @@ url3 = 'https://drive.google.com/uc?id=11fNwTWL1kKrYJ-SgeTZ8q2C67p-JEcEZ&confirm
 output3 = '../source_code/data/v1.0-simplified_simplified-nq-train.jsonl.gz'
 gdown.download(url3, output3, quiet=False, proxy=None)
 
+url_qa = 'https://drive.google.com/uc?id=1Yq5xbjTddupmz-jFszdWqAo_l4xl7hyC&confirm=t'
+output4 = '../results/questions_answering/export_riva/qa-model.riva'
+gdown.download(url_qa, output4, quiet=False, proxy=None)
+
 #gdown.cached_download(url, output, quiet=False,proxy=None,postprocess=gdown.extractall)

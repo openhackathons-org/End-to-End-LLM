@@ -23,9 +23,9 @@ Lab 1, 3, and 4 are run using singularity while Lab 2 is run using Docker
 
 **To run the material using Singularity containers, follow the steps below.**
 
-To build the Data Preprocessing Singularity container, run: `singularity build --fakeroot --sandbox tao_convai.simg Singularity_convai`
+Build the Data Preprocessing Singularity container using: `singularity build --fakeroot --sandbox tao_convai.simg Singularity_convai`
 
-To build the Nemo Megatron Singularity container, run: `singularity build --fakeroot --sandbox nemo_23_02.simg.simg Singularity_nemo`
+Build the Nemo Megatron Singularity container with: `singularity build --fakeroot --sandbox nemo_23_02.simg.simg Singularity_nemo`
 
 
 ### Run Data Preprocessing Notebooks
@@ -40,7 +40,7 @@ When you are done with `Overview.ipynb`, `General_preprocessing.ipynb`, `QandA_d
 
 ### Run Nemo Megatron and NeMo Megatron-GPT 1.3B Prompt
 
-Run the first container with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace nemo_23_02.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
+Run the container with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace nemo_23_02.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
 
 Open jupyter lab in browser: http://localhost:8888 and continue the lab by running
 
@@ -55,11 +55,9 @@ Run Lab 2 via a Docker container. Root privileges are required using `sudo`.
 
 ### Installing the prerequisites
 
-1. Install `docker-ce` by following the [official instructions](https://docs.docker.com/engine/install/). Once you have installed docker-ce, follow the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) to ensure that docker can be run without `sudo`.
+1. Install `docker-ce` by following the [official instructions](https://docs.docker.com/engine/install/). Once you have installed docker-ce, follow the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) or step 2 below to ensure that docker can be run without `sudo`.
 
-2. Install `nvidia-container-toolkit` by following the [install-guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
-
-3. Run docker without root 
+2. Run docker without root  
 
     ```
     sudo groupadd docker
@@ -68,6 +66,8 @@ Run Lab 2 via a Docker container. Root privileges are required using `sudo`.
     
     newgrp docker
     ```    
+
+3. Install `nvidia-container-toolkit` by following the [install-guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
 
 4. Get an NGC account and API key:
     - Go to the [NGC](https://ngc.nvidia.com/) website and click on `Register for NGC`.
@@ -97,7 +97,7 @@ Run Lab 2 via a Docker container. Root privileges are required using `sudo`.
         
         `conda activate launcher`
 
-    - In the launcher environment please install the following:
+    - In the launcher environment, please install the following:
     
        ``` 
         pip3 install jupyterlab
@@ -134,7 +134,7 @@ Congratulations, you've successfully built and deployed an end-to-end NLP Questi
 
 ## Known issues
 
-If the Riva server is fails to start, uncomment and run `docker logs riva-speech` to identify the errors within the logs
+If the Riva server fails to start, run `docker logs riva-speech` to identify the errors within the logs
 
 ```bash
 ...

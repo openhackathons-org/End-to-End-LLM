@@ -65,7 +65,10 @@ MODEL_DEPLOY_KEY=""
 # are inspected and optimized for deployment. The optimized versions are
 # stored in $riva_model_loc/models. The riva server exclusively uses these
 # optimized versions.
-riva_model_loc="~/End-to-End-NLP/workspace/results/challenge/export_riva"
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+_DIR=$( echo $DIR | cut -f 1,2,3,4,5 -d "/")"/results/challenge/export_riva"
+
+riva_model_loc=$( echo $_DIR)
 #riva_model_loc="riva-model-repo"
 
 if [[ $riva_target_gpu_family == "tegra" ]]; then
