@@ -10,11 +10,11 @@ url1 = 'https://drive.google.com/uc?id=1l769asMKe7TYlahcurZkFgYiZc6JCr7E&confirm
 output1 = '../source_code/data/coqa-train-v1.0.json'
 gdown.download(url1, output1, quiet=False, proxy=None)
 
-url2 = 'https://drive.google.com/uc?id=1i_qockpjY8MM5wbabDRkcICLVwTEHO3n&export=download'
+url2 = 'https://drive.google.com/uc?id=1i_qockpjY8MM5wbabDRkcICLVwTEHO3n&confirm=t'
 output2 = '../source_code/data/train-v2.0.json'
 gdown.download(url2, output2, quiet=False, proxy=None)
 
-url3 = 'https://drive.google.com/uc?id=11fNwTWL1kKrYJ-SgeTZ8q2C67p-JEcEZ&export=download'
+url3 = 'https://drive.google.com/uc?id=11fNwTWL1kKrYJ-SgeTZ8q2C67p-JEcEZ&confirm=t'
 output3 = '../source_code/data/v1.0-simplified_simplified-nq-train.jsonl.gz'
 gdown.download(url3, output3, quiet=False, proxy=None)
 
