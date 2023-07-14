@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/nemo:23.02
+
+%environment
+    export XDG_RUNTIME_DIR=
+
+%post
+     
+    # Install jupyterlab and packages
+   
+    
+    
+%runscript
+    "$@"
+
+%labels
+    Author Tosin
+    

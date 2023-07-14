@@ -1,30 +1,57 @@
 # End-to-End NLP Bootcamp
 
-This repository contains the material for the **End-To-End NLP** bootcamp, the goal of which is to build a complete end-to-end NLP pipeline for Question Answering application. This bootcamp will introduce participants to multiple NVIDIA® SDKs, most notably NVIDIA TAO Toolkit, NVIDIA TensorRT™, and NVIDIA RIVA. Participants will also have hands-on experience in data preprocessing, model training, optimization, and deployment at scale.
+This repository contains the material for the **End-To-End NLP** bootcamp, the goal of which is to build a complete end-to-end NLP pipeline for Question Answering application. This bootcamp will introduce participants to multiple NVIDIA® SDKs, most notably NVIDIA NeMo Megatron, NVIDIA TensorRT™, and NVIDIA RIVA. Participants will also have hands-on experience in data preprocessing, model training, optimization, and deployment at scale.
 
-The content is structured in 3 modules, plus an introductory notebook and two challenge notebooks:
+The content is structured in 4 modules, plus an introductory notebook and two challenge notebooks:
+
 - Overview of **End-To-End NLP** bootcamp
 - Lab 1: Data preprocessing
-- Lab 2: Transfer learning with NVIDIA TAO (QA training)
-- Lab 3: Custom model deployment on RIVA 
+- Lab 2: Custom model deployment on RIVA 
+- Lab 3: NeMo Megatron
+- Lab 4: NeMo Megatron-GPT 1.3B Prompt
 - Challenge 1: building SQuAD dataset 
 - Challenge 2: deploying custom dataset on RIVA
 
 
 ## Tutorial duration
 
-The total bootcamp material would take approximately 8 hours. It is recommended to divide the teaching of the material into two days, covering Lab 1 in one session and Lab 2 & 3 in the next session.
+The total bootcamp material would take approximately 8 hours. It is recommended to divide the teaching of the material into two days, covering Lab 1 & 2 in one session and Lab 3 & 4 in the next session.
 
-## Running using Singularity
+## Running Labs
 
-Update coming soon
+Lab 1, 3, and 4 are run using singularity while Lab 2 is run using Docker 
+
+**To run the material using Singularity containers, follow the steps below.**
+
+To build the Data Preprocessing Singularity container, run: `singularity build --fakeroot --sandbox tao_convai.simg Singularity_convai`
+
+To build the Nemo Megatron Singularity container, run: `singularity build --fakeroot --sandbox nemo_23_02.simg.simg Singularity_nemo`
 
 
+### Run Data Preprocessing Notebooks
+
+Run the first container with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace tao_convai.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
+
+The `-B` flag mounts local directories in the container filesystem and ensures changes are stored locally in the project folder. Open jupyter lab in browser: http://localhost:8888
+
+You may now start working on the lab by clicking on the `Start_Here.ipynb` notebook.
+
+When you are done with `Overview.ipynb`, `General_preprocessing.ipynb`, `QandA_data_processing.ipynb`, and `Exercise.ipynb` notebooks, shut down jupyter lab by selecting `File > Shut Down` in the top left corner, then shut down the Singularity container by typing `exit` or pressing `ctrl + d` in the terminal window.
+
+### Run Nemo Megatron and NeMo Megatron-GPT 1.3B Prompt
+
+Run the first container with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace nemo_23_02.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
+
+Open jupyter lab in browser: http://localhost:8888 and continue the lab by running
+
+`NeMo_Primer.ipynb`, `Multitask_Prompt_and_PTuning.ipynb`, and `demo.ipynb` notebooks.
+
+When you are done with these notebooks, shut down jupyter lab by selecting `File > Shut Down` in the top left corner, then shut down the Singularity container by typing `exit` or pressing `ctrl + d` in the terminal window.
 
 
-## Running using Docker
+## Running Riva Deployment using Docker
 
-Run the material via a python virtual environment and Docker containers. Root privileges are required using `sudo`. If you don't have root privileges on your local system, please follow the above instructions on how to run the lab using Singularity.
+Run Lab 2 via a Docker container. Root privileges are required using `sudo`.
 
 ### Installing the prerequisites
 
@@ -32,7 +59,17 @@ Run the material via a python virtual environment and Docker containers. Root pr
 
 2. Install `nvidia-container-toolkit` by following the [install-guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
 
-3. Get an NGC account and API key:
+3. Run docker without root 
+
+    ```
+    sudo groupadd docker
+    
+    sudo usermod  -aG docker $USER
+    
+    newgrp docker
+    ```    
+
+4. Get an NGC account and API key:
     - Go to the [NGC](https://ngc.nvidia.com/) website and click on `Register for NGC`.
     - Click on the `Continue` button where `NVIDIA Account (Use existing or create a new NVIDIA account)` is written.
     - Fill in the required information and register, then proceed to log in with your new account credentials.
@@ -42,140 +79,126 @@ Run the material via a python virtual environment and Docker containers. Root pr
     - Finally, copy the generated API key and username and save them somewhere on your local system.
 
 
-4. Install NGC CLI
-    - Log in with your account credentials at [NGC](https://ngc.nvidia.com/).
-    - In the top right corner, click on your username and select `Setup` in the dropdown menu.
-    - Proceed and click on the `Downloads` button in the CLI panel.
-    - Select `AMD64 Linux` and follow the instructions.
-    - Open the terminal on your local system and log in to the NGC docker registry (`nvcr.io`) using the command `docker login nvcr.io` and enter `$oauthtoken` as Username and your `API Key` as Password.  
+5. Create a new `conda` environment using `miniconda`:
 
-### Install TAO Toolkit and dependencies
+    - Install `Miniconda` by following the [official instructions](https://conda.io/projects/conda/en/latest/user-guide/install/).
 
-TAO Toolkit is a Python pip package that is hosted on the NVIDIA PyIndex. The package uses the docker restAPI under the hood to interact with the NGC Docker registry to pull and instantiate the underlying docker containers. You must have an NGC account and an API key associated with your account.
+    - Once you have installed `miniconda`, create a new environment by setting the Python version to 3.8.10:
 
-#### Virtualvenwrapper approach
+        `conda create -n launcher python=3.8.10`
 
-1. Install `nvidia-container-toolkit > 1.3.0-1` from [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+    - Activate the `conda` environment that you have just created:
 
-2. Run docker without root 
+        `conda activate launcher`
 
-    - sudo groupadd docker
-    - sudo usermod  -aG docker $USER
-    - newgrp docker 
+    - When you are done, you may deactivate and reactivate your conda environment using these commands:
 
-3. pip3 install python=3.6.9
+        `conda deactivate`
+        
+        `conda activate launcher`
 
-4. Create virtualvenwrapper launcher
-```
-sudo apt update
-sudo apt install python-pip python3-pip unzip
-pip3 install --upgrade pip
-
-pip3 install virtualenvwrapper
-
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=/home/user/.virtualenvs
-export PATH=/home/user/.local/bin:$PATH
-source /home/user/.local/bin/virtualenvwrapper.sh
-
-mkvirtualenv -p /usr/bin/python3 launcher
-
-workon launcher
-```
-Note that `user` should be replaced with the local machine user
-
-5. TAO and Jupyter notebook installation
+    - In the launcher environment please install the following:
     
-    `pip3 install jupyterlab`
+       ``` 
+        pip3 install jupyterlab
+        
+        pip3 install ipywidgets
+        
+        pip3 install soundfile
+        
+        pip install Cython
+        
+        pip install nemo_toolkit[all]
+        
+        pip3 install pynini
+      ```
+        
+### Run Riva Notebook       
 
-    `pip3 install nvidia-tao`
-
-
-6. Invoke the entrypoints using the this command `tao -h`. You should see the following output:
-```
-usage: tao 
-         {list,stop,info,augment,bpnet,classification,detectnet_v2,dssd,emotionnet,faster_rcnn,fpenet,gazenet,gesturenet,
-         heartratenet,intent_slot_classification,lprnet,mask_rcnn,punctuation_and_capitalization,question_answering,
-         retinanet,speech_to_text,ssd,text_classification,converter,token_classification,unet,yolo_v3,yolo_v4,yolo_v4_tiny}
-         ...
-
-Launcher for TAO
-
-optional arguments:
--h, --help            show this help message and exit
-
-tasks:
-      {list,stop,info,augment,bpnet,classification,detectnet_v2,dssd,emotionnet,faster_rcnn,fpenet,gazenet,gesturenet,heartratenet
-      ,intent_slot_classification,lprnet,mask_rcnn,punctuation_and_capitalization,question_answering,retinanet,speech_to_text,
-      ssd,text_classification,converter,token_classification,unet,yolo_v3,yolo_v4,yolo_v4_tiny}
-```
-
-   For more info, visit the [TAO Toolkit documentation](https://docs.nvidia.com/tao/tao-toolkit/text/tao_toolkit_quick_start_guide.html).
-
-#### Install other dependencies to run the lab:
-```
-    pip3 install spacy-langdetect
-    pip3 install -U spacy[cuda114]
-    python3 -m spacy download en_core_web_sm 
-    pip3 install pyspellchecker
-    pip3 install openpyxl
-    pip3 install -U transformers==3.0.0
-    pip3 install nltk
-    #python3 -m nltk.downloader punkt
-    #pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
-    #pip3 install Cython   
-    pip3 install jupyterlab
-    pip3 install ipywidgets
-    pip3 install gdown
-    pip3 install soundfile
-    
-    #nemo installation
-    pip install Cython
-    pip install nemo_toolkit[all]
-    pip3 install pynini
-```
-
-### Run All Notebooks
-
-Activate virtualvenwrapper launcher `workon launcher` (you may be required to export path as executed in 4. above) 
-    
-You are to run the ALL notebooks in the `launcher` environment.
+To run the `qa-riva-deployment.ipynb`(Custom model deployment on RIVA ), run `conda activate launcher`
 
 Launch the jupyter lab with:
 
-`jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=~/End-to-End-NLP/workspace` 
+`jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=~/End-to-End-NLP/workspace`
 
-Remember to set the `--notebook-dir` to the location where the `project folder` where this material is located.
+Remember to set the `--notebook-dir` to the location where the `project folder` for this material is located.
 
-Then, open jupyter lab in the browser at http://localhost:8888 and start working on the lab by clicking on the `Start_here.ipynb` notebook.
+Then, open jupyter lab in the browser at http://localhost:8888 and start working on the lab.
+
+When you are done with the `qa-riva-deployment.ipynb` and `challenge.ipynb` notebooks, shut down jupyter lab by selecting `File > Shut Down` in the top left corner
 
 
-Congratulations, you've successfully built and deployed an end-to-end computer vision pipeline!
+Congratulations, you've successfully built and deployed an end-to-end NLP Question Answering pipeline!
+
+
 
 ## Known issues
 
-### TAO
+If the Riva server is fails to start, uncomment and run `docker logs riva-speech` to identify the errors within the logs
 
-a. When installing the TAO Toolkit Launcher to your host machine’s native python3 as opposed to the recommended route of using a virtual environment, you may get an error saying that `tao binary wasn’t found`. This is because the path to your `tao` binary installed by pip wasn’t added to the `PATH` environment variable in your local machine. In this case, please run the following command:
+```bash
+...
+I1101 13:15:43.179256 103 tensorrt.cc:5454] TRITONBACKEND_ModelInstanceInitialize: riva-trt-riva_qa-nn-bert-base-uncased_0 (GPU device 0)
+  > Riva waiting for Triton server to load all models...retrying in 1 second
+  > Riva waiting for Triton server to load all models...retrying in 1 second
+  > Riva waiting for Triton server to load all models...retrying in 1 second
+  > Riva waiting for Triton server to load all models...retrying in 1 second
+I1101 13:15:47.239278 103 logging.cc:49] [MemUsageChange] Init CUDA: CPU +253, GPU +0, now: CPU 287, GPU 1456 (MiB)
+I1101 13:15:47.473845 103 logging.cc:49] Loaded engine size: 208 MiB
 
-`export PATH=$PATH:~/.local/bin`
+...
 
-b. When training, you can see an error message stating:
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1101 13:15:54.687420 103 server.cc:576] 
++--------------------+-------------------------------------------------------------------------------+--------+
+| Backend            | Path                                                                          | Config |
++--------------------+-------------------------------------------------------------------------------+--------+
+| onnxruntime        | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so               | {}     |
+| tensorrt           | /opt/tritonserver/backends/tensorrt/libtriton_tensorrt.so                     | {}     |
+| riva_nlp_qa        | /opt/tritonserver/backends/riva_nlp_qa/libtriton_riva_nlp_qa.so               | {}     |
+| riva_nlp_tokenizer | /opt/tritonserver/backends/riva_nlp_tokenizer/libtriton_riva_nlp_tokenizer.so | {}     |
++--------------------+-------------------------------------------------------------------------------+--------+
+
+I1101 13:15:54.687497 103 server.cc:619] 
++---------------------------------------+---------+--------+
+| Model                                 | Version | Status |
++---------------------------------------+---------+--------+
+| qa_qa_postprocessor                   | 1       | READY  |
+| qa_tokenizer-en-US                    | 1       | READY  |
+| riva-trt-riva_qa-nn-bert-base-uncased | 1       | READY  |
+| riva_qa                               | 1       | READY  |
++---------------------------------------+---------+--------+
+...
+
+I1101 13:15:54.841537 103 http_server.cc:180] Started Metrics Service at 0.0.0.0:8002
+  > Triton server is ready...
+ERROR: illegal value '' specified for bool flag 'asr_service'
+ERROR: illegal value '' specified for bool flag 'tts_service'
+One of the processes has exited unexpectedly. Stopping container.
+Signal (15) received.
+/opt/riva/bin/start-riva: line 1: kill: (197) - No such process
+I1101 13:16:00.113213 103 server.cc:250] Waiting for in-flight requests to complete.
+I1101 13:16:00.113252 103 server.cc:266] Timeout 30: Found 0 model versions that have in-flight inferences
+I1101 13:16:00.113277 103 model_repository_manager.cc:1109] unloading: riva_qa:1
+I1101 13:16:00.113419 103 model_repository_manager.cc:1109] unloading: riva-trt-riva_qa-nn-bert-base-uncased:1
+I1101 13:16:00.113504 103 model_repository_manager.cc:1109] unloading: qa_tokenizer-en-US:1
+I1101 13:16:00.113636 103 model_repository_manager.cc:1109] unloading: qa_qa_postprocessor:1
+I1101 13:16:00.113837 103 model_repository_manager.cc:1214] successfully unloaded 'riva_qa' version 1
+
 ```
-Resource exhausted: OOM when allocating tensor...
-ERROR: Ran out of GPU memory, please lower the batch size, use a smaller input resolution, use a smaller backbone, or enable model parallelism for supported TLT architectures (see TLT documentation).
+
+**Solution**
+
+The solution is set to `asr_service` and `tts_service` to **false** within the `config.sh` file and ensure that line 93 in the `riva_start.sh` is change from:
+```bash
+docker_run_args="-p 8000 -p 8001 -p 8002 $image_speech_api start-riva --riva-uri=0.0.0.0:$riva_speech_api_port --asr_service=$service_enabled_asr --tts_service=$service_enabled_tts --nlp_service=$service_enabled_nlp $ssl_args &> /dev/null"
+
+to:
+
+docker_run_args="-p 8000 -p 8001 -p 8002 $image_speech_api start-riva --riva-uri=0.0.0.0:$riva_speech_api_port  --nlp_service=$service_enabled_nlp $ssl_args &> /dev/null"
 ```
-As the error says, you ran out of GPU memory. Try playing with batch size to reduce the memory footprint.
-
-### NGC
-
-You can see an error message stating:
-
-`ngc: command not found ...`
-
-You can resolve this by setting the path to ngc within the conda launcher environment as:
-
-`echo "export PATH=\"\$PATH:$(pwd)/ngc-cli\"" >> ~/.bash_profile && source ~/.bash_profile`
-
-### Riva Speech Server
 
