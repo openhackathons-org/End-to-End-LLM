@@ -1,0 +1,51 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/tao/tao-toolkit-pyt:v3.22.05-py3
+
+
+%runscript
+ 
+    "$@"
+
+%post
+
+    apt-get update -y
+    apt-get -y dist-upgrade 
+    DEBIAN_FRONTEND=noninteractive apt-get -yq install --no-install-recommends python3-dev \
+	    m4 vim-nox emacs-nox nano zip \
+ 	    python3-pip python3-setuptools nginx zip make build-essential libtbb-dev
+    rm -rf /var/lib/apt/cache/* 
+    
+    apt-get -y install python3-pip
+    apt-get install -y libsndfile1 ffmpeg
+    pip3 install spacy-langdetect
+    pip3 install -U spacy[cuda114]
+    python3 -m spacy download en_core_web_sm 
+    pip3 install pyspellchecker
+    pip3 install openpyxl
+    pip3 install -U transformers==3.0.0
+    pip3 install nltk
+    #python3 -m nltk.downloader punkt
+    #pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+    #pip3 install Cython   
+    pip3 install jupyterlab
+    pip3 install ipywidgets
+    pip3 install gdown
+    pip3 install soundfile
+    
+    #nemo installation
+    pip install Cython
+    pip install nemo_toolkit[all]
+    pip3 install pynini
+    
+    #python3 /workspace/source_code/dataset.py
+
+%files
+
+    #workspace/* /workspace/
+
+%environment
+XDG_RUNTIME_DIR=
+
+%labels
+
+AUTHOR Tosin
