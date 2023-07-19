@@ -10,7 +10,7 @@ The content is structured in 4 modules, plus an introductory notebook and two ch
 - Lab 3: NeMo Megatron
 - Lab 4: NeMo Megatron-GPT 1.3B Prompt
 - Challenge 1: building SQuAD dataset 
-- Challenge 2: deploying custom dataset on RIVA
+- Challenge 2: deploying custom model on RIVA
 
 
 ## Tutorial duration
