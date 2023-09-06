@@ -2,24 +2,24 @@
 
 This repository contains the material for the **End-To-End NLP** bootcamp, the goal of which is to build a complete end-to-end NLP pipeline for Question Answering application. This bootcamp will introduce participants to multiple NVIDIA® SDKs, most notably NVIDIA NeMo Megatron, NVIDIA TensorRT™, and NVIDIA RIVA. Participants will also have hands-on experience in data preprocessing, model training, optimization, and deployment at scale.
 
-The content is structured in 4 modules, plus an introductory notebook and two challenge notebooks:
+The content is structured in 3 Labs, plus an introductory notebook and three challenge notebooks:
 
 - Overview of **End-To-End NLP** bootcamp
 - Lab 1: Data preprocessing
 - Lab 2: Custom model deployment on RIVA 
-- Lab 3: NeMo Megatron
-- Lab 4: NeMo Megatron-GPT 1.3B Prompt
+- Lab 3: NeMo Megatron-GPT
 - Challenge 1: building SQuAD dataset 
 - Challenge 2: deploying custom model on RIVA
+- Challenge 3: P-tuning/Prompt tuning with CUAD dataset
 
 
 ## Tutorial duration
 
-The total bootcamp material would take approximately 8 hours. It is recommended to divide the teaching of the material into two days, covering Lab 1 & 2 in one session and Lab 3 & 4 in the next session.
+The total bootcamp material would take approximately 8 hours. It is recommended to divide the teaching of the material into two days, covering Lab 1 & 2 in one session and Lab 3 in the next session.
 
 ## Running Labs
 
-Lab 1, 3, and 4 are run using singularity while Lab 2 is run using Docker 
+Lab 1 and 3 are run using singularity while Lab 2 is run using Docker 
 
 **To run the material using Singularity containers, follow the steps below.**
 
@@ -38,7 +38,7 @@ You may now start working on the lab by clicking on the `Start_Here.ipynb` noteb
 
 When you are done with `Overview.ipynb`, `General_preprocessing.ipynb`, `QandA_data_processing.ipynb`, and `Exercise.ipynb` notebooks, shut down jupyter lab by selecting `File > Shut Down` in the top left corner, then shut down the Singularity container by typing `exit` or pressing `ctrl + d` in the terminal window.
 
-### Run Nemo Megatron and NeMo Megatron-GPT 1.3B Prompt
+### Run Nemo Megatron-GPT
 
 Run the container with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace nemo_23_02.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
 
