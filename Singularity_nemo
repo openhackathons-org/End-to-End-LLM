@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvcr.io/nvidia/nemo:23.02
+From: nvcr.io/nvidia/nemo:23.06
 
 %environment
     export XDG_RUNTIME_DIR=
