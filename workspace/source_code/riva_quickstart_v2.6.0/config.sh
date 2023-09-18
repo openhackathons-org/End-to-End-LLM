@@ -38,10 +38,10 @@ asr_acoustic_model=("conformer")
 # Specify one or more GPUs to use
 # specifying more than one GPU is currently an experimental feature, and may result in undefined behaviours.
 #gpus_to_use="device=0" 
-gpus_to_use="device=0"
+gpus_to_use="device=0:0"
 # Specify the encryption key to use to deploy models
 #MODEL_DEPLOY_KEY="tlt_encode"
-MODEL_DEPLOY_KEY="aWNydmQ5bGRjNmppcDdoOTUwMGxuMHYzaWQ6ZTc1Y2UxNWMtYTkxMi00MWQ2LWFkMjAtMWE3MzQ4YTFlMWUw"
+MODEL_DEPLOY_KEY=""
 
 # Locations to use for storing models artifacts
 #

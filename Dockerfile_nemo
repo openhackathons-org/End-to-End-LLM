@@ -1,0 +1,6 @@
+# Select base image
+FROM nvcr.io/nvidia/nemo:23.06
+
+
+# Install jupyterlab and packages
+RUN pip install megatron.core
