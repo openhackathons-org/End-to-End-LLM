@@ -147,12 +147,12 @@ Congratulations, you've successfully built and deployed an end-to-end NLP pipeli
 - Build the Nemo Megatron-GPT Singularity container with: `singularity build --fakeroot --sandbox nemo_23_06.simg Singularity_nemo`
 
 
-** Run the Labs (1,2, and 4)**
+**Run the Labs (1,2, and 4)**
 
 
-- Run the container for Lab 1 and 2 with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace tao_convai.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
+- Run the container for Lab 1 and 2 with: `singularity run --fakeroot --nv -B ~/End-to-End-NLP/workspace:/workspace tao_convai.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
 
-- Run the container for Lab 4 with: `singularity run --fakeroot --nv -B ~/End-to-End-Computer-NLP/workspace:/workspace nemo_23_06.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
+- Run the container for Lab 4 with: `singularity run --fakeroot --nv -B ~/End-to-End-NLP/workspace:/workspace nemo_23_06.simg jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`
 
 
 The `-B` flag mounts local directories in the container filesystem and ensures changes are stored locally in the project folder. Open jupyter lab in browser: http://localhost:8888
