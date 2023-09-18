@@ -98,11 +98,11 @@ pip3 install pynini
 
 ```
 
-** Run the Labs (1,2, and 3)**
+**Run the Labs (1,2, and 3)**
 
 Activate the conda launcher environment: `conda activate launcher`
     
-You are to run the all `data preprocessing` notebooks, `question-answering-training.ipynb` and `qa-riva-deployment.ipynb` in the `launcher` environment.
+You are to run all the `data preprocessing` notebooks, `question-answering-training.ipynb` and `qa-riva-deployment.ipynb` in the `launcher` environment.
 
 Launch the jupyter lab with:
 
@@ -117,7 +117,7 @@ Then, open jupyter lab in the browser at http://localhost:8888 and start working
 
 To run the NeMo Megatron-GPT content, build a Docker container by following these steps:  
 
-- Open a terminal window, navigate to the directory where `Dockerfile_nemo` is located (e.g. `cd ~/End-to-End-NLP`)
+- Open a terminal window and navigate to the directory where `Dockerfile_nemo` file is located (e.g. `cd ~/End-to-End-NLP`)
 - Run `sudo docker build -f Dockerfile_nemo --network=host -t <imagename>:<tagnumber> .`, for instance: `sudo docker build -f Dockerfile_nemo --network=host -t nemo_23_06:1.0 .`
 - Next, execute the command: `sudo docker run --rm -it --gpus=all -v ~/End-to-End-NLP/workspace:/workspace --network=host -p 8888:8888 deepstream:1.0`
 
@@ -132,7 +132,7 @@ flags:
 When you are inside the container, launch jupyter lab: 
 `jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace`. 
 
-Open the browser at `http://localhost:8888` and click on the `Start_here.ipynb` notebook. From the table of content, start working on the NeMo Megatron-GPT lab by clicking on `Nemo Fundamentals` notebook.
+Open the browser at `http://localhost:8888` and click on the `Start_here.ipynb` notebook. Start working on the NeMo Megatron-GPT lab by clicking on `Nemo Fundamentals` notebook.
 As soon as you are done with the lab, shut down jupyter lab by selecting `File > Shut Down` and the container by typing `exit` or pressing `ctrl d` in the terminal window.
 
 Congratulations, you've successfully built and deployed an end-to-end NLP pipeline!
@@ -168,7 +168,7 @@ Lab 3 (Riva Deploynemt) has no singularity container.
 
 
 
-Congratulations, you've successfully built and deployed an end-to-end NLP Question Answering pipeline!
+Congratulations, you've successfully built and deployed an end-to-end NLP pipeline!
 
 
 
