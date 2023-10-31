@@ -1,37 +1,33 @@
-# End-to-End NLP Bootcamp
+# End-to-End LLM Bootcamp
 
-The End-to-End Natural Language Processing (NLP) Bootcamp is designed from a real-world perspective that follows the data processing, development, and deployment pipeline paradigm. Attendees walk through the workflow of preprocessing raw text data and learn how to build a SQuAD (Stanford Question Answering Dataset) dataset format for Question Answering, train the dataset using NeMo Megatron-GPT (a transformer-based language model) and BERT (Bidirectional Encoder Representations from Transformers), an open source machine learning framework for NLP, and deploy the AI pipeline using a GPU-accelerated speech AI SDK.  
+The End-to-End LLM Bootcamp is designed from a real-world perspective that follows the data processing, development, and deployment pipeline paradigm. Attendees walk through the workflow of preprocessing the SQuAD (Stanford Question Answering Dataset) dataset for Question Answering task, train the dataset using BERT (Bidirectional Encoder Representations from Transformers), and execute prompt learning strategy using NeMo Megatron-GPT (a transformer-based language model). Attendees will also learn to optimize LLM (Large Language Model) using NVIDIA® TensorRT™ (an SDK for high-performance deep learning inference), guardrail prompts and responses from the LLM model using NeMo Guardrails, and deploy the AI pipeline using NVIDIA Triton™ Inference Server an open-source software that standardizes AI model deployment and execution across every workload.
 
 
 
 ## Bootcamp Content
 
-The content is structured in 4 Labs, plus an introductory notebook and three challenge notebooks:
+The content is structured in three Labs, plus an introductory notebook and two lab ativities notebooks:
 
-- Overview of **End-To-End NLP** bootcamp
-- Lab 1: Data preprocessing
-- Lab 2: Training and Fine-tuning with TAO Toolkit
-- Lab 3: Custom model deployment on RIVA 
-- Lab 4: NeMo Megatron-GPT
-- Challenge 1: building SQuAD dataset 
-- Challenge 2: deploying custom model on RIVA
-- Challenge 3: P-tuning/Prompt tuning using the CUAD dataset
+- Overview of **End-To-End LLM** bootcamp
+- Lab 1: NeMo Megatron-GPT
+- Lab 2: TensorRT-LLM and Triton Deployment with LLama2 7B Model
+- Lab 3: NeMo Guardrails  
+- Lab Activity 1: Question Answering task 
+- Lab Activity 2: P-tuning/Prompt tuning task
 
 
 ## Tools and Frameworks
 
 The tools and frameworks used in the bootcamp material are as follows:
 
-- [NVIDIA® TAO Toolkit](https://developer.nvidia.com/tao-toolkit)
-- [NVIDIA Riva](https://developer.nvidia.com/riva)
-- [NVIDIA TensorRT™](https://developer.nvidia.com/tensorrt)
 - [NVIDIA NeMo™](https://www.nvidia.com/en-us/ai-data-science/generative-ai/nemo-framework/)
-- [Python Natural Language Toolkit (NLTK) library](https://www.nltk.org/)
+- [NVIDIA TensorRT™](https://developer.nvidia.com/tensorrt)
+- [NVIDIA Triton™ Inference Server](https://www.nvidia.com/en-us/ai-data-science/products/triton-inference-server/)
 
 
 ## Tutorial duration
 
-The total bootcamp material would take approximately 8 hours. It is recommended to divide the teaching of the material into two days, covering Lab 1, 2, & 3 in one session and the rest in the next session.
+The total bootcamp material would take approximately 8hrs 45mins. It is recommended to divide the teaching of the material into two days, covering Lab 1 in one session and the rest in the next session.
 
 
 ## Deploying the Bootcamp Material
