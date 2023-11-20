@@ -1,24 +1,24 @@
 # End-to-End LLM Bootcamp
 
-The End-to-End LLM Bootcamp is designed from a real-world perspective that follows the data processing, development, and deployment pipeline paradigm. Attendees walk through the workflow of preprocessing the SQuAD (Stanford Question Answering Dataset) dataset for Question Answering task, train the dataset using BERT (Bidirectional Encoder Representations from Transformers), and execute prompt learning strategy using NeMo Megatron-GPT (a transformer-based language model). Attendees will also learn to optimize LLM (Large Language Model) using NVIDIA® TensorRT™ (an SDK for high-performance deep learning inference), guardrail prompts and responses from the LLM model using NeMo Guardrails, and deploy the AI pipeline using NVIDIA Triton™ Inference Server an open-source software that standardizes AI model deployment and execution across every workload.
-
+The End-to-End LLM (Large Language Model) Bootcamp is designed from a real-world perspective that follows the data processing, development, and deployment pipeline paradigm. Attendees walk through the workflow of preprocessing the SQuAD (Stanford Question Answering Dataset) dataset for Question Answering task, training the dataset using BERT (Bidirectional Encoder Representations from Transformers), and executing prompt learning strategy using NVIDIA® NeMo™ and a transformer-based language model, NVIDIA Megatron. Attendees will also learn to optimize an LLM using NVIDIA TensorRT™, an SDK for high-performance deep learning inference, guardrail prompts and responses from the LLM model using NeMo Guardrails, and deploy the AI pipeline using NVIDIA Triton™ Inference Server, an open-source software that standardizes AI model deployment and execution across every workload.
 
 
 ## Bootcamp Content
 
-The content is structured in three Labs, plus an introductory notebook and two lab ativities notebooks:
+This content contains three Labs, plus an introductory notebook and two lab activities notebooks:
 
 - Overview of **End-To-End LLM** bootcamp
-- Lab 1: NeMo Megatron-GPT
+- Lab 1: Megatron-GPT
 - Lab 2: TensorRT-LLM and Triton Deployment with LLama2 7B Model
 - Lab 3: NeMo Guardrails  
 - Lab Activity 1: Question Answering task 
 - Lab Activity 2: P-tuning/Prompt tuning task
 
 
+
 ## Tools and Frameworks
 
-The tools and frameworks used in the bootcamp material are as follows:
+The tools and frameworks used in the Bootcamp material are as follows:
 
 - [NVIDIA NeMo™](https://www.nvidia.com/en-us/ai-data-science/generative-ai/nemo-framework/)
 - [NVIDIA TensorRT™](https://developer.nvidia.com/tensorrt)
@@ -27,7 +27,7 @@ The tools and frameworks used in the bootcamp material are as follows:
 
 ## Tutorial duration
 
-The total bootcamp material would take approximately 8hrs 45mins. It is recommended to divide the teaching of the material into two days, covering Lab 1 in one session and the rest in the next session.
+The total Bootcamp material would take approximately 8 hours and 45 minutes. We recommend dividing the material's teaching into two days, covering Lab 1 in one session and the rest in the next session.
 
 
 ## Deploying the Bootcamp Material
