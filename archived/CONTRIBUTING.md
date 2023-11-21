@@ -35,8 +35,8 @@ Emphasis, including quotes made for emphasis and introduction of new terms shoul
 #### .nemo Model Deployment with RIVA 
 * In the RIVA section of the repo, only .tlt or .etlt models can be deployed. Add a section to the RIVA notebook on how to deploy .nemo models on RIVA
 
-#### Nemo Megatron
-* LLMs such GPT are currently the most advanced models in the NLP domain. However, these models are very large and are not best trained with TAO but rather with Nemo Megatron to achieve desirable results. Also, the model enables to use of fewer size datasets through the concept of P-tuning. The task would be to extend the repo with a section that covers the fundamentals of NeMo and P-tuning/Prompt tuning with NeMo Megatron for Question Answering (QA)
+#### Nemo GPT Checkpoints
+* LLMs such GPT are currently the most advanced models in the NLP domain. However, these models are very large and are not best trained with TAO but rather with Nemo Framework to achieve desirable results. Also, the model enables to use of fewer size datasets through the concept of P-tuning. The task would be to extend the repo with a section that covers the fundamentals of NeMo and P-tuning/Prompt tuning with NeMo Megatron for Question Answering (QA)
 
 ### Directory stucture for Github
 

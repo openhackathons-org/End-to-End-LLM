@@ -1,6 +1,10 @@
 # Select base image
-FROM nvcr.io/nvidia/nemo:23.06
+FROM nvcr.io/nvidia/nemo:23.08
 
 
 # Install jupyterlab and packages
+RUN pip install lightning
 RUN pip install megatron.core
+RUN pip install nemoguardrails
+RUN pip install openai
+RUN pip install ujson
