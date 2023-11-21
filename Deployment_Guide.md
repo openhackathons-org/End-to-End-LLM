@@ -87,6 +87,11 @@ When you finish these notebooks, shut down jupyter lab by selecting `File > Shut
 Congratulations, you've successfully built and deployed an end-to-end LLM pipeline!
 
 
+### Running Nemo Guardrails (Singularity)  
+
+- Build the guardrails container with: `singularity build --fakeroot --sandbox nemo_sandbox.simg Singularity_nemo_guardrails`
+
+- Run the container with `singularity run --nv --bind ~/End-to-End-LLM/workspace/jupyter_notebook/nemo-guardrails/guardrails:/workspace nemo_sandbox.simg  jupyter-lab --notebook-dir=/workspace --port=8888 --ip=0.0.0.0 --no-browser --NotebookApp.token=""`
 
 
 ## Known issues
