@@ -64,7 +64,7 @@ Congratulations, you've successfully built and deployed an end-to-end LLM pipeli
 - Build the Megatron-GPT and NeMo Guardrails (Lab 1 & 3) Singularity container with: `singularity build --fakeroot --sandbox nemo_23_06.simg Singularity_nemo`
 
 - Build the TensorRT-LLM and Triton (Lab 2) Singularity container through the following steps:
-    - Obtain the LLaMA-v2 7B checkpoints from [here](https://github.com/facebookresearch/llama) and setup your dataset in `End-to-End-LLM/workspace/source_code/llama-2-7b` 
+    - Obtain the LLaMA-v2 7B checkpoints from [here](https://github.com/facebookresearch/llama) and setup your dataset in End-to-End-LLM/workspace/source_code/llama-2-7b 
     - Open a terminal window and navigate to the directory where `Singularity_trtllm` file is located (e.g. `cd ~/End-to-End-LLM`)
     - Build this TRT-LLM Singularity continaer with :  `singularity build --sandbox tensorrt_llm.sif Singularity_trtllm`
 
@@ -87,11 +87,6 @@ When you finish these notebooks, shut down jupyter lab by selecting `File > Shut
 Congratulations, you've successfully built and deployed an end-to-end LLM pipeline!
 
 
-### Running Nemo Guardrails (Singularity)  
-
-- Build the guardrails container with: `singularity build --fakeroot --sandbox nemo_sandbox.simg Singularity_nemo_guardrails`
-
-- Run the container with `singularity run --nv --bind ~/End-to-End-LLM/workspace/jupyter_notebook/nemo-guardrails/guardrails:/workspace nemo_sandbox.simg  jupyter-lab --notebook-dir=/workspace --port=8888 --ip=0.0.0.0 --no-browser --NotebookApp.token=""`
 
 
 ## Known issues
