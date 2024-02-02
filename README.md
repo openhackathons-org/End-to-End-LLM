@@ -9,7 +9,7 @@ This content contains three Labs, plus an introductory notebook and two lab acti
 
 - Overview of **End-To-End LLM** bootcamp
 - Lab 1: Megatron-GPT
-- Lab 2: TensorRT-LLM and Triton Deployment with LLama2 7B Model
+- Lab 2: TensorRT-LLM and Triton Deployment with LLama-2-7B Model
 - Lab 3: NeMo Guardrails  
 - Lab Activity 1: Question Answering task 
 - Lab Activity 2: P-tuning/Prompt tuning task

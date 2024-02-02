@@ -5,6 +5,7 @@ FROM nvcr.io/nvidia/nemo:23.06
 # Install jupyterlab and packages
 RUN pip install lightning
 RUN pip install megatron.core
-RUN pip install nemoguardrails
+RUN pip install --upgrade nemoguardrails
 RUN pip install openai
 RUN pip install ujson
+RUN pip install --upgrade --no-cache-dir gdown
