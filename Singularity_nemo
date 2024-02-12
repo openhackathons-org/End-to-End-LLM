@@ -9,9 +9,10 @@ From: nvcr.io/nvidia/nemo:23.06
     # Install jupyterlab and packages
     pip install lightning
     pip install megatron.core
-    pip install nemoguardrails
+    pip install --upgrade nemoguardrails
     pip install openai
     pip install ujson
+    pip install --upgrade --no-cache-dir gdown
     
     
 %runscript
