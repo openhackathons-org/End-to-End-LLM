@@ -20,6 +20,7 @@ COPY workspace/ /code/tensorrt_llm
 WORKDIR /code/tensorrt_llm/source_code
 
 RUN git clone https://github.com/triton-inference-server/tensorrtllm_backend.git
+RUN cd tensorrtllm_backend && git checkout v0.5.0
 RUN cd tensorrtllm_backend && rm -rf tensorrt_llm/ && ls
 
 # Install TRT-LLM 
@@ -27,6 +28,7 @@ WORKDIR /code/tensorrt_llm/source_code/tensorrtllm_backend
 RUN git clone https://github.com/NVIDIA/TensorRT-LLM.git
 
 WORKDIR /code/tensorrt_llm/source_code/tensorrtllm_backend/TensorRT-LLM
+RUN git checkout v0.5.0
 RUN git submodule update --init --recursive
 RUN git lfs install
 RUN git lfs pull
