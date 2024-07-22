@@ -1,0 +1,182 @@
+{
+  "data": [
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "Climate change is caused by what?",
+              "id": 396322,
+              "answers": [
+                {
+                  "answer_id": 447041,
+                  "document_id": 719823,
+                  "question_id": 396322,
+                  "text": "human emissions of greenhouse gases from fossil fuel combustion, deforestation and agricultural practices",
+                  "answer_start": 47,
+                  "answer_end": 152,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "In the period since the Industrial Revolution, human emissions of greenhouse gases from fossil fuel combustion, deforestation and agricultural practices have led to global warming and climate change.",
+          "document_id": 719823
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "What are the factors that can influence climate?",
+              "id": 396325,
+              "answers": [
+                {
+                  "answer_id": 447045,
+                  "document_id": 719825,
+                  "question_id": 396325,
+                  "text": "Changes in the Earth��s orbit, the energy output of the sun, volcanic activity, the geographic distribution of the Earth��s land masses and other internal or external processes can influence climate.",
+                  "answer_start": 41,
+                  "answer_end": 240,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "The Earth��s climate has always changed. Changes in the Earth��s orbit, the energy output of the sun, volcanic activity, the geographic distribution of the Earth��s land masses and other internal or external processes can influence climate. Scientists refer to this type of long-term climate change as ��natural climate change��",
+          "document_id": 719825
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "What poses an existential threat to human civilisation ?",
+              "id": 396329,
+              "answers": [
+                {
+                  "answer_id": 447052,
+                  "document_id": 719826,
+                  "question_id": 396329,
+                  "text": "climate change",
+                  "answer_start": 311,
+                  "answer_end": 325,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "What term can be interchange with climate change",
+              "id": 396335,
+              "answers": [
+                {
+                  "answer_id": 447058,
+                  "document_id": 719826,
+                  "question_id": 396335,
+                  "text": "global warming",
+                  "answer_start": 38,
+                  "answer_end": 52,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "What are scientists arguments about the impacts of climate change?",
+              "id": 396339,
+              "answers": [
+                {
+                  "answer_id": 447061,
+                  "document_id": 719826,
+                  "question_id": 396339,
+                  "text": "the impacts of climate change will be devastating for natural and human systems and that climate change poses an existential threat to human civilisation.",
+                  "answer_start": 222,
+                  "answer_end": 376,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "Although the terms climate change and global warming are often used interchangeably, climate change is a broader term that incorporates both global warming and other observed changes in climate. Many scientists argue that the impacts of climate change will be devastating for natural and human systems and that climate change poses an existential threat to human civilisation.",
+          "document_id": 719826
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "The Baby sun bucket hat is made from where?",
+              "id": 396330,
+              "answers": [
+                {
+                  "answer_id": 447053,
+                  "document_id": 719827,
+                  "question_id": 396330,
+                  "text": "Made in China",
+                  "answer_start": 713,
+                  "answer_end": 726,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "Baby sun bucket hat - This hat goes on when the sun rises above the horizon, and stays on when raindrops start falling. Its made from an ultra-durable 4-ply, 4.2-oz Supplex nylon fabric with a DWR (durable water repellent) finish, and reverses to either a contrasting solid color or print. A soft tuck-away chin strap with a hook-and-loop fastener holds securely without chafing young jawlines. Packs small; easy care. Details: \"Lightweight Supplex nylon is soft, dries fast and packs small; easy care\", Brim shields head and neck, Chin strap with hook-and-loop fastener can be tucked away when not in use. Fabric: \"4-ply, 4.2-oz Supplex nylon with a DWR (durable water repellent) finish\". Weight: (49 g 1.7 oz). Made in China.",
+          "document_id": 719827
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "The weight of active classic boxer is?",
+              "id": 396331,
+              "answers": [
+                {
+                  "answer_id": 447054,
+                  "document_id": 719828,
+                  "question_id": 396331,
+                  "text": "Weight: 99 g",
+                  "answer_start": 758,
+                  "answer_end": 770,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Why is Active classic boxers a cult favorite",
+              "id": 396334,
+              "answers": [
+                {
+                  "answer_id": 447057,
+                  "document_id": 719828,
+                  "question_id": 396334,
+                  "text": "they keep their cool, especially in sticky situations. The quick-drying, lightweight underwear takes up minimal space in a travel pack",
+                  "answer_start": 78,
+                  "answer_end": 212,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "Active classic boxers - There's a reason why our boxers are a cult favorite - they keep their cool, especially in sticky situations. The quick-drying, lightweight underwear takes up minimal space in a travel pack. An exposed, brushed waistband offers next-to-skin softness, five-panel construction with a traditional boxer back for a classic fit, and a functional fly. Made of 3.7-oz 100% recycled polyester with moisture-wicking performance. Inseam (size M) is 4 1/2. Recyclable through the Common Threads Recycling Program. Details: \"Silky Capilene 1 fabric is ultralight, breathable and quick-to-dry\". Fabric: 3.7-oz 100% all-recycled polyester with Gladiodor natural odor control for the garment. Recyclable through the Common Threads Recycling Program. Weight: 99 g (3.5 oz)and Made in Mexico.",
+          "document_id": 719828
+        }
+      ]
+    }
+  ]
+}

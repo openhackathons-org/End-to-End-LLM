@@ -1,8 +1,0 @@
-define user express greeting
-  "hi"
-  "hello"
-
-define flow
-  user express greeting
-  $name = execute get_user_name
-  bot $name

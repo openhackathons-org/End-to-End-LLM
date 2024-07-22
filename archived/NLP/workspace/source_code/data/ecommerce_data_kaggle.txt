@@ -1,0 +1,7 @@
+source link: https://www.kaggle.com/datasets/cclark/product-item-data
+
+
+About
+500 actual SKUs from an outdoor apparel brand's product catalog. It's somewhat rare to get real item level data in a real-world format. Very useful for testing things like recommendation engines. In fact…maybe I'll publish some code along with this :)
+
+title: eCommerce Item Data

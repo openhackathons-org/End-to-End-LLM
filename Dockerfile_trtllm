@@ -1,50 +1,43 @@
-# Copyright (c) 2023 NVIDIA Corporation.  All rights reserved.
-
-# 1. Obtain the LLaMA-v2 7B checkpoints from here : https://github.com/facebookresearch/llama and setup your dataset in /workspace/source_code/llama-2-7b 
-# 2. To build the docker container, run: $ sudo docker build -t openhackathons:llm-trt_llm -f Dockerfile_trtllm .
-# 3. To run: $ sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --rm -p 8888:8888 -p 8000:8000 -it openhackathons:llm-trt_llm
-# 4. Finally, open http://127.0.0.1:8888/
+# Copyright (c) 2024 NVIDIA Corporation.  All rights reserved.
 
 # Select Base Image 
-FROM nvcr.io/nvidia/tritonserver:23.10-trtllm-python-py3
+FROM nvcr.io/nvidia/tritonserver:24.03-trtllm-python-py3
 
 
 # TensorRT-LLM uses git-lfs, which needs to be installed in advance.
 RUN apt-get update && apt-get -y install git git-lfs cmake
-RUN pip3 install jupyterlab datasets tritonclient[all]
+RUN pip3 install jupyterlab datasets tabulate tritonclient[all]
 
-# TO COPY the data 
-COPY workspace/ /code/tensorrt_llm
 
-# Setup Triton_Backend
-WORKDIR /code/tensorrt_llm/source_code
+# Make app directory
+RUN mkdir -p /workspace/app
+WORKDIR /workspace
 
+#Clone tensorrtllm_backend repo
 RUN git clone https://github.com/triton-inference-server/tensorrtllm_backend.git
-RUN cd tensorrtllm_backend && git checkout v0.5.0
 RUN cd tensorrtllm_backend && rm -rf tensorrt_llm/ && ls
 
 # Install TRT-LLM 
-WORKDIR /code/tensorrt_llm/source_code/tensorrtllm_backend
+WORKDIR /workspace/tensorrtllm_backend
 RUN git clone https://github.com/NVIDIA/TensorRT-LLM.git
 
-WORKDIR /code/tensorrt_llm/source_code/tensorrtllm_backend/TensorRT-LLM
-RUN git checkout v0.5.0
+# Navigate into TensorRT-LLM and checkout at v0.8.0 or latest release
+WORKDIR /workspace/tensorrtllm_backend/TensorRT-LLM
+RUN git checkout v0.8.0
 RUN git submodule update --init --recursive
 RUN git lfs install
 RUN git lfs pull
-# Build TRT-LLM from source
 
-RUN python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt
 
-# Deploy TensorRT-LLM in your environment.
-RUN pip3 install ./build/tensorrt_llm*.whl
+# Install TRT-LLM To build the TensorRT-LLM code.
+RUN python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt 
 
-# Correct paths
+# Install TRT-LLM using pip Deploy TensorRT-LLM.
+RUN pip install ./build/tensorrt_llm*.whl
+
+# rename folder name
 RUN cd .. && mv TensorRT-LLM tensorrt_llm
+
 
 # TensorRT-LLM Server Port 
 ENV HTTP_PORT 8000
-
-## Uncomment this line to run Jupyter notebook by default
-CMD jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/code/tensorrt_llm
-

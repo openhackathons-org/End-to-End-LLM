@@ -1,0 +1,18 @@
+source link: https://data.world/promptcloud/amazon-product-dataset-2020
+
+
+Context
+This dataset was created by our in house teams at PromptCloud and [DataStock . This dataset contains 30K records in it. You can download the whole dataset ](https://app.datastock.shop/](https://www.promptcloud.com/)[here ?site_name=Amazon_USA_Product_Details).
+
+Content
+This dataset contains the following:
+
+Total Records Count: 697053 
+Domain Name: amazon.com 
+Date Range: 01st Jan 2020 - 31st Jan 2020  
+File Extension: CSV
+
+Available Fields: Uniq Id, Product Name, Brand Name, Asin, Category, Upc Ean Code, List Price, Selling Price, Quantity, Model Number, About Product, Product Specification, Technical Details, Shipping Weight, Product Dimensions, Image, Variants, SKU, Product Url, Stock, Product Details, Dimensions, Color, Ingredients, Direction To Use, Is Amazon Seller, Size Quantity Variant, Product Description
+
+Acknowledgements
+We wouldn't be here without the help of our in house web scraping and data mining teams at ](https://www.promptcloud.com/)[PromptCloud and DataStock .
