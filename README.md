@@ -33,7 +33,7 @@ The total Bootcamp material would take approximately 7 hours and 30 minutes. We 
 
 ## Deploying the Bootcamp Material
 
-To deploy the Labs, please refer to the deployment guide presented [here](https://github.com/openhackathons-org/End-to-End-LLM-Private/blob/main/Deployment_Guide.md)
+To deploy the Labs, please refer to the deployment guide presented [here](https://github.com/openhackathons-org/End-to-End-LLM/blob/main/Deployment_Guide.md)
 
 
 ## Attribution
