@@ -1,0 +1,54 @@
+# Copyright (c) 2023 NVIDIA Corporation.  All rights reserved.
+
+# 1. Obtain the LLaMA-v2 7B checkpoints from here : https://github.com/facebookresearch/llama and setup your dataset in /workspace/source_code/llama-2-7b 
+# 2. To build this : $ singularity build --sandbox tensorrt_llm.sif Singularity_trtllm
+# 3. To Run this : $ singularity run --writable --nv --env HTTP_PORT=8000 tensorrt_llm.sif jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/code/tensorrt_llm
+# 4. Finally, open http://127.0.0.1:8888/
+
+Bootstrap: docker
+From: nvcr.io/nvidia/tritonserver:23.10-trtllm-python-py3
+
+%post
+    # Update and install necessary packages
+    apt-get update && apt-get -y install git git-lfs cmake
+
+    # Install Python packages
+    pip3 install jupyterlab datasets tritonclient[all]
+
+    # Setup the code directory
+    mkdir -p /code/tensorrt_llm/source_code
+
+    # Clone and setup TensorRT-LLM backend
+    cd /code/tensorrt_llm/source_code
+    git clone https://github.com/triton-inference-server/tensorrtllm_backend.git
+    cd tensorrtllm_backend
+    rm -rf tensorrt_llm/
+    ls
+
+    # Install TRT-LLM
+    cd /code/tensorrt_llm/source_code/tensorrtllm_backend
+    git clone https://github.com/NVIDIA/TensorRT-LLM.git
+    cd TensorRT-LLM
+    git submodule update --init --recursive
+    git lfs install
+    git lfs pull
+
+    # Build TRT-LLM from source
+    python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt
+
+    # Deploy TensorRT-LLM in your environment
+    pip3 install ./build/tensorrt_llm*.whl
+
+    # Correct paths
+    cd ..
+    mv TensorRT-LLM tensorrt_llm
+
+%runscript
+    "$@"
+
+%environment
+    # Set any environment variables here if needed
+
+%files
+    # Copy files from your host to the container; adjust paths as necessary
+    workspace/ /code/tensorrt_llm

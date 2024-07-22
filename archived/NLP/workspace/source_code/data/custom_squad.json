@@ -1,0 +1,194 @@
+{
+    "version": "v2.0",
+    "data": [
+        {
+            "title": "climate change",
+            "paragraphs": [
+                {
+                    "context": "In the period since the Industrial Revolution, human emissions of greenhouse gases from fossil fuel combustion, deforestation and agricultural practices have led to global warming and climate change. Observed and anticipated changes in ",
+                    "qas": [
+                        {
+                            "question": "what is revolution",
+                            "id": 1,
+                            "answer": [
+                                {
+                                    "text": "since the Industrial Revolution",
+                                    "answer_start": 14
+                                }
+                            ],
+                            "is_impossible": false
+                        },
+                        {
+                            "question": "what are the two factors affecting  human on earth",
+                            "id": 2,
+                            "answer": [
+                                {
+                                    "text": "global warming and climate change",
+                                    "answer_start": 165
+                                }
+                            ],
+                            "is_impossible": false
+                        }
+                    ]
+                },
+                {
+                    "context": "\u201cClimate\u201d is the average of the weather conditions at a particular point on the Earth. Typically, climate is expressed in terms of expected temperature, rainfall and wind conditions based on historical observations. \u201cClimate change\u201d is a change in either the average climate or climate variability that persists over an extended period.",
+                    "qas": [
+                        {
+                            "question": "The concpet is described as ",
+                            "id": 3,
+                            "answer": [
+                                {
+                                    "text": "\u201cClimate change\u201d",
+                                    "answer_start": 216
+                                }
+                            ],
+                            "is_impossible": false
+                        }
+                    ]
+                },
+                {
+                    "context": "The Earth\u2019s climate has always changed. Changes in the Earth\u2019s orbit, the energy output of the sun, volcanic activity, the geographic distribution of the Earth\u2019s land masses and other internal or external processes can influence climate. Scientists refer to this type of long-term climate change as \u201cnatural climate change\u201d",
+                    "qas": [
+                        {
+                            "question": "where is the changes occuring",
+                            "id": 4,
+                            "answer": [
+                                {
+                                    "text": "Changes in the Earth\u2019s orbit,",
+                                    "answer_start": 40
+                                }
+                            ],
+                            "is_impossible": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "product sales",
+            "paragraphs": [
+                {
+                    "context": "Active classic boxers - There's a reason why our boxers are a cult favorite - they keep their cool, especially in sticky situations. The quick-drying, lightweight underwear takes up minimal space in a travel pack. An exposed, brushed waistband offers next-to-skin softness, five-panel construction with a traditional boxer back for a classic fit, and a functional fly. Made of 3.7-oz 100% recycled polyester with moisture-wicking performance. Inseam (size M) is 4 1/2. Recyclable through the Common Threads Recycling Program. Details: \"Silky Capilene 1 fabric is ultralight, breathable and quick-to-dry\". Fabric: 3.7-oz 100% all-recycled polyester with Gladiodor natural odor control for the garment. Recyclable through the Common Threads Recycling Program. Weight: 99 g (3.5 oz)and Made in Mexico.",
+                    "qas": [
+                        {
+                            "question": "Why is Active classic boxers are a cult favorite ",
+                            "id": 5,
+                            "answer": [
+                                {
+                                    "text": " they keep their cool, especially in sticky situations. The quick-drying, lightweight underwear takes up minimal space in a travel pack.",
+                                    "answer_start": 77
+                                }
+                            ],
+                            "is_impossible": false
+                        }
+                    ]
+                },
+                {
+                    "context": "Baby sun bucket hat - This hat goes on when the sun rises above the horizon, and stays on when raindrops start falling. Its made from an ultra-durable 4-ply, 4.2-oz Supplex nylon fabric with a DWR (durable water repellent) finish, and reverses to either a contrasting solid color or print. A soft tuck-away chin strap with a hook-and-loop fastener holds securely without chafing young jawlines. Packs small; easy care. Details: \"Lightweight Supplex nylon is soft, dries fast and packs small; easy care\", Brim shields head and neck, Chin strap with hook-and-loop fastener can be tucked away when not in use. Fabric: \"4-ply, 4.2-oz Supplex nylon with a DWR (durable water repellent) finish\". Weight: (49 g 1.7 oz). Made in China.",
+                    "qas": [
+                        {
+                            "question": "Which if the hats goes on when the sun rises above the horizon, and stays on when raindrops start falling. Its made from an ultra-durable 4-ply, 4.2-oz Supplex nylon fabric with a DWR (durable water repellent) finish, and reverses to either a contrasting solid color or print.",
+                            "id": 6,
+                            "answer": [
+                                {
+                                    "text": "Baby sun bucket hat - ",
+                                    "answer_start": 0
+                                }
+                            ],
+                            "is_impossible": false
+                        },
+                        {
+                            "question": NaN,
+                            "id": 7,
+                            "answer": [],
+                            "is_impossible": true
+                        }
+                    ]
+                },
+                {
+                    "context": "Active classic boxers - There's a reason why our boxers are a cult favorite - they keep their cool, especially in sticky situations. The quick-drying, lightweight underwear takes up minimal space in a travel pack. An exposed, brushed waistband offers next-to-skin softness, five-panel construction with a traditional boxer back for a classic fit, and a functional fly. Made of 3.7-oz 100% recycled polyester with moisture-wicking performance. Inseam (size M) is 4 1/2. Recyclable through the Common Threads Recycling Program. Details: \"Silky Capilene 1 fabric is ultralight, breathable and quick-to-dry\". Fabric: 3.7-oz 100% all-recycled polyester with Gladiodor natural odor control for the garment. Recyclable through the Common Threads Recycling Program. Weight: 99 g (3.5 oz)and Made in Mexico.",
+                    "qas": [
+                        {
+                            "question": "What are the main greenhouse gasses",
+                            "id": 8,
+                            "answer": [],
+                            "is_impossible": true
+                        },
+                        {
+                            "question": "The causes an effect of ",
+                            "id": 9,
+                            "answer": [],
+                            "is_impossible": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "entertainment",
+            "paragraphs": [
+                {
+                    "context": "Baby sun bucket hat - This hat goes on when the sun rises above the horizon, and stays on when raindrops start falling. Its made from an ultra-durable 4-ply, 4.2-oz Supplex nylon fabric with a DWR (durable water repellent) finish, and reverses to either a contrasting solid color or print. A soft tuck-away chin strap with a hook-and-loop fastener holds securely without chafing young jawlines. Packs small; easy care. Details: \"Lightweight Supplex nylon is soft, dries fast and packs small; easy care\", Brim shields head and neck, Chin strap with hook-and-loop fastener can be tucked away when not in use. Fabric: \"4-ply, 4.2-oz Supplex nylon with a DWR (durable water repellent) finish\". Weight: (49 g 1.7 oz). Made in China.",
+                    "qas": [
+                        {
+                            "question": "What is another term for climate change",
+                            "id": 10,
+                            "answer": [],
+                            "is_impossible": true
+                        }
+                    ]
+                },
+                {
+                    "context": "Although the terms climate change and global warming are often used interchangeably, climate change is a broader term that incorporates both global warming and other observed changes in climate. Many scientists argue that the impacts of climate change will be devastating for natural and human systems and that climate change poses an existential threat to human civilisation.",
+                    "qas": [
+                        {
+                            "question": "What does climate change pose ?",
+                            "id": 11,
+                            "answer": [
+                                {
+                                    "text": "climate change poses an existential threat to human civilisation",
+                                    "answer_start": 311
+                                }
+                            ],
+                            "is_impossible": false
+                        }
+                    ]
+                },
+                {
+                    "context": "A key question for sociologists, posed by Anthony Giddens (2011), is why a threat of such magnitude is routinely ignored by our societies. Giddens\u2019 response, which he calls the \u201cGiddens Paradox\u201d, is that the lack of tangible, immediate danger from climate change means that most will do nothing to respond. Yet by the time the danger becomes clearly visible, it will be too late to act due to the lag between the emission of greenhouse gases and their full warming impact. ",
+                    "qas": [
+                        {
+                            "question": "mention the name",
+                            "id": 12,
+                            "answer": [],
+                            "is_impossible": true
+                        },
+                        {
+                            "question": "doing nothing means ",
+                            "id": 13,
+                            "answer": [
+                                {
+                                    "text": " the lack of tangible, immediate danger from climate change means that most will do nothing to respond.",
+                                    "answer_start": 203
+                                }
+                            ],
+                            "is_impossible": false
+                        }
+                    ]
+                },
+                {
+                    "context": "Climate change is also of interest to sociologists because the activities that are responsible for anthropogenic climate change are embedded in human social life. Everyday social practices like eating, working, moving about, and heating and cooling our homes result in emissions of greenhouse gases that contribute to climate change. Further, the causes and impacts of climate change are unevenly distributed, raising questions of social justice. In general, wealthier countries produce more greenhouse gas emissions per person, whereas poorer countries tend to be more vulnerable to the impacts of climate change. Proposed responses to climate change also have social impacts that are unevenly distributed. Consequently, climate change poses the first truly global social dilemma, and it is one that has proven politically intractable at multiple governance scales.",
+                    "qas": [
+                        {
+                            "question": "this question has no answer",
+                            "id": 14,
+                            "answer": [],
+                            "is_impossible": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
