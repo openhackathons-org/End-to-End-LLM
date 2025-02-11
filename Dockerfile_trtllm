@@ -16,7 +16,7 @@ WORKDIR /workspace
 #Clone tensorrtllm_backend repo
 RUN git clone https://github.com/triton-inference-server/tensorrtllm_backend.git
 RUN cd tensorrtllm_backend && rm -rf tensorrt_llm/ && ls
-RUN git checkout 76464e9be06600f3979acad9c14857938a66ff9f
+RUN git checkout v0.9.0
 
 # Install TRT-LLM 
 WORKDIR /workspace/tensorrtllm_backend
