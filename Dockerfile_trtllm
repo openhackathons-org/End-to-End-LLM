@@ -14,7 +14,7 @@ RUN mkdir -p /workspace/app
 WORKDIR /workspace
 
 #Clone tensorrtllm_backend repo
-RUN git clone https://github.com/triton-inference-server/tensorrtllm_backend.git
+RUN git clone https://github.com/triton-inference-server/tensorrtllm_backend.git -b v0.10.0
 RUN cd tensorrtllm_backend && rm -rf tensorrt_llm/ && ls
 
 # Install TRT-LLM 
@@ -30,7 +30,7 @@ RUN git lfs pull
 
 
 # Install TRT-LLM To build the TensorRT-LLM code.
-RUN python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt 
+RUN MAX_JOBS=32 python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt 
 
 # Install TRT-LLM using pip Deploy TensorRT-LLM.
 RUN pip install ./build/tensorrt_llm*.whl
@@ -38,6 +38,16 @@ RUN pip install ./build/tensorrt_llm*.whl
 # rename folder name
 RUN cd .. && mv TensorRT-LLM tensorrt_llm
 
+# Checkout v0.10.0 for compatibility with current labs version
+RUN cd /workspace/tensorrtllm_backend && git checkout v0.10.0
+
+# Patch faulty profiler.py from tensorrt_llm
+COPY profiler-py.patch /tmp
+RUN patch -i /tmp/profiler-py.patch /usr/local/lib/python3.10/dist-packages/tensorrt_llm/profiler.py
+
+# update transformers, tokenizers & accelerate
+RUN pip install --upgrade --no-cache-dir transformers tokenizers
+RUN pip install --upgrade accelerate
 
 # TensorRT-LLM Server Port 
 ENV HTTP_PORT 8000

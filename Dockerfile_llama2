@@ -1,0 +1,7 @@
+FROM nvcr.io/nvidia/nemo:23.10
+
+ENV XDG_RUNTIME_DIR=
+RUN pip install ujson && \
+    pip install --upgrade --no-cache-dir gdown && \
+    pip install accelerate peft bitsandbytes transformers trl && \
+    pip install spacy-langdetect 
