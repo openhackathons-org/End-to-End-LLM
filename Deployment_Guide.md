@@ -46,7 +46,7 @@ When you finish these notebooks, shut down jupyter lab by selecting `File > Shut
 To run the Labs 2 & 3, build a Docker container by following these steps:  
 
 - Open a terminal window and navigate to the directory where `Dockerfile_llama` file is located (e.g. `cd ~/End-to-End-LLM`)
-- To build the docker container, run : `sudo docker build -f Dockerfile --network=host -t <imagename>:<tagnumber> .`, for instance: `sudo docker build -f Dockerfile_llama --network=host -t tensorrtllm:v08 .`
+- To build the docker container, run : `sudo docker build -f Dockerfile --network=host -t <imagename>:<tagnumber> .`, for instance: `sudo docker build -f Dockerfile_trtllm --network=host -t tensorrtllm:v08 .`
 - To run the built container : `sudo docker run --gpus all -it --rm --shm-size=1g -p 8888:8888 -p 8000:8000 --ulimit memlock=-1 --ulimit stack=67108864 -v ~/End-to-End-LLM/workspace-llm-use-case:/workspace/app tensorrtllm:v08 jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --notebook-dir=/workspace/app`
 
 
