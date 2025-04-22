@@ -1,7 +1,7 @@
 # Copyright (c) 2024 NVIDIA Corporation.  All rights reserved.
 
 # Select Base Image 
-FROM nvcr.io/nvidia/tritonserver:24.03-trtllm-python-py3
+FROM nvcr.io/nvidia/tritonserver:25.03-trtllm-python-py3
 
 
 # TensorRT-LLM uses git-lfs, which needs to be installed in advance.
@@ -23,14 +23,14 @@ RUN git clone https://github.com/NVIDIA/TensorRT-LLM.git
 
 # Navigate into TensorRT-LLM and checkout at v0.8.0 or latest release
 WORKDIR /workspace/tensorrtllm_backend/TensorRT-LLM
-RUN git checkout v0.8.0
+RUN git checkout v0.18.1
 RUN git submodule update --init --recursive
 RUN git lfs install
 RUN git lfs pull
 
 
 # Install TRT-LLM To build the TensorRT-LLM code.
-RUN python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt 
+RUN python3 ./scripts/build_wheel.py --trt_root /usr/local/tensorrt
 
 # Install TRT-LLM using pip Deploy TensorRT-LLM.
 RUN pip install ./build/tensorrt_llm*.whl
